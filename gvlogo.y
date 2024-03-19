@@ -247,7 +247,7 @@ void save(const char* path){
 	SDL_FreeSurface(surface);
 }
 
-void goto(x, y){
+void goto(float x, float y){
     float x_val, y_val;
     where(&x_val, &y_val);
     x = x_val;
