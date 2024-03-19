@@ -114,9 +114,11 @@ void change_color(int r, int g, int b);
 void clear();
 void save(const char* path);
 void shutdown();
+void goto(float x, float y);
+void where();
 
 
-#line 120 "gvlogo.tab.c"
+#line 122 "gvlogo.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -562,8 +564,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    76,    76,    78,    79,    81,    82,    84,    85,    86,
-      87,    88,    89
+       0,    78,    78,    80,    81,    83,    84,    86,    87,    88,
+      89,    90,    91
 };
 #endif
 
@@ -1248,61 +1250,61 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* program: statement_list END  */
-#line 76 "gvlogo.y"
+#line 78 "gvlogo.y"
                                                                                 { printf("Program complete."); shutdown(); exit(0); }
-#line 1254 "gvlogo.tab.c"
+#line 1256 "gvlogo.tab.c"
     break;
 
   case 5: /* statement: command SEP  */
-#line 81 "gvlogo.y"
+#line 83 "gvlogo.y"
                                                                                         { prompt(); }
-#line 1260 "gvlogo.tab.c"
+#line 1262 "gvlogo.tab.c"
     break;
 
   case 6: /* statement: error '\n'  */
-#line 82 "gvlogo.y"
+#line 84 "gvlogo.y"
                                                                                                 { yyerrok; prompt(); }
-#line 1266 "gvlogo.tab.c"
+#line 1268 "gvlogo.tab.c"
     break;
 
   case 7: /* command: PENUP  */
-#line 84 "gvlogo.y"
+#line 86 "gvlogo.y"
                                                                                         { penup(); }
-#line 1272 "gvlogo.tab.c"
+#line 1274 "gvlogo.tab.c"
     break;
 
   case 8: /* command: PENDOWN  */
-#line 85 "gvlogo.y"
+#line 87 "gvlogo.y"
                                                                                                 { pendown(); }
-#line 1278 "gvlogo.tab.c"
+#line 1280 "gvlogo.tab.c"
     break;
 
   case 9: /* command: MOVE NUMBER  */
-#line 86 "gvlogo.y"
+#line 88 "gvlogo.y"
                                                                                                 { move((yyvsp[0].f)); }
-#line 1284 "gvlogo.tab.c"
+#line 1286 "gvlogo.tab.c"
     break;
 
   case 10: /* command: CHANGE_COLOR NUMBER NUMBER NUMBER  */
-#line 87 "gvlogo.y"
+#line 89 "gvlogo.y"
                                                                     { change_color((yyvsp[-2].f), (yyvsp[-1].f), (yyvsp[0].f)); }
-#line 1290 "gvlogo.tab.c"
+#line 1292 "gvlogo.tab.c"
     break;
 
   case 11: /* command: CLEAR  */
-#line 88 "gvlogo.y"
+#line 90 "gvlogo.y"
                                                                                                 { clear(); }
-#line 1296 "gvlogo.tab.c"
+#line 1298 "gvlogo.tab.c"
     break;
 
   case 12: /* command: TURN NUMBER  */
-#line 89 "gvlogo.y"
+#line 91 "gvlogo.y"
                                                                                                 { turn((yyvsp[0].f)); }
-#line 1302 "gvlogo.tab.c"
+#line 1304 "gvlogo.tab.c"
     break;
 
 
-#line 1306 "gvlogo.tab.c"
+#line 1308 "gvlogo.tab.c"
 
       default: break;
     }
@@ -1500,7 +1502,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 101 "gvlogo.y"
+#line 103 "gvlogo.y"
 
 
 int main(int argc, char** argv){
@@ -1650,7 +1652,7 @@ void save(const char* path){
 	SDL_FreeSurface(surface);
 }
 
-void goto(x, y){
+void goto(float x, float y){
     float x_val, y_val;
     where(&x_val, &y_val);
     x = x_val;

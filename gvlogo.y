@@ -44,6 +44,8 @@ void change_color(int r, int g, int b);
 void clear();
 void save(const char* path);
 void shutdown();
+void goto(float x, float y);
+void where();
 
 %}
 
