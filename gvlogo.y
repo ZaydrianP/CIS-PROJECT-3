@@ -73,24 +73,24 @@ void shutdown();
 
 %%
 
-program:		statement_list END				{ printf("Program complete."); shutdown(); exit(0); }
+program:			statement_list END				{ printf("Program complete."); shutdown(); exit(0); }
 		;
 statement_list:		statement					
-		|	statement statement_list
+		|			statement statement_list
 		;
-statement:		command SEP					{ prompt(); }
-		|	error '\n' 					{ yyerrok; prompt(); }
+statement:			command SEP						{ prompt(); }
+		|			error '\n' 						{ yyerrok; prompt(); }
 		;
-command:		PENUP						{ penup(); }
+command:			PENUP							{ penup(); }
 		;
 expression_list:
-		|	// Complete these and any missing rules
+		|			expression expression_list		
 		;
-expression:		NUMBER PLUS expression				{ $$ = $1 + $3; }
-		|	NUMBER MULT expression				{ $$ = $1 * $3; }
-		|	NUMBER SUB expression				{ $$ = $1 - $3; }
-		|	NUMBER DIV expression				{ $$ = $1 / $3; }
-		|	NUMBER
+expression:			NUMBER PLUS expression			{ $$ = $1 + $3; }
+		|			NUMBER MULT expression			{ $$ = $1 * $3; }
+		|			NUMBER SUB expression			{ $$ = $1 - $3; }
+		|			NUMBER DIV expression			{ $$ = $1 / $3; }
+		|			NUMBER
 		;
 
 %%

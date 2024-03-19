@@ -1,14 +1,14 @@
-/* A Bison parser, made by GNU Bison 3.8.2.  */
+/* A Bison parser, made by GNU Bison 2.3.  */
 
-/* Bison interface for Yacc-like parsers in C
+/* Skeleton interface for Bison's Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
-   Inc.
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
 
-   This program is free software: you can redistribute it and/or modify
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,7 +16,9 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -31,88 +33,85 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
-   especially those whose name start with YY_ or yy_.  They are
-   private implementation details that can be changed or removed.  */
-
-#ifndef YY_YY_GVLOGO_TAB_H_INCLUDED
-# define YY_YY_GVLOGO_TAB_H_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int yydebug;
-#endif
-
-/* Token kinds.  */
+/* Tokens.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-  enum yytokentype
-  {
-    YYEMPTY = -2,
-    YYEOF = 0,                     /* "end of file"  */
-    YYerror = 256,                 /* error  */
-    YYUNDEF = 257,                 /* "invalid token"  */
-    SEP = 258,                     /* SEP  */
-    PENUP = 259,                   /* PENUP  */
-    PENDOWN = 260,                 /* PENDOWN  */
-    PRINT = 261,                   /* PRINT  */
-    CHANGE_COLOR = 262,            /* CHANGE_COLOR  */
-    COLOR = 263,                   /* COLOR  */
-    CLEAR = 264,                   /* CLEAR  */
-    TURN = 265,                    /* TURN  */
-    LOOP = 266,                    /* LOOP  */
-    MOVE = 267,                    /* MOVE  */
-    NUMBER = 268,                  /* NUMBER  */
-    END = 269,                     /* END  */
-    SAVE = 270,                    /* SAVE  */
-    PLUS = 271,                    /* PLUS  */
-    SUB = 272,                     /* SUB  */
-    MULT = 273,                    /* MULT  */
-    DIV = 274,                     /* DIV  */
-    STRING = 275,                  /* STRING  */
-    QSTRING = 276                  /* QSTRING  */
-  };
-  typedef enum yytokentype yytoken_kind_t;
+   /* Put the tokens into the symbol table, so that GDB and other debuggers
+      know about them.  */
+   enum yytokentype {
+     SEP = 258,
+     PENUP = 259,
+     PENDOWN = 260,
+     PRINT = 261,
+     CHANGE_COLOR = 262,
+     COLOR = 263,
+     CLEAR = 264,
+     TURN = 265,
+     LOOP = 266,
+     MOVE = 267,
+     NUMBER = 268,
+     END = 269,
+     SAVE = 270,
+     PLUS = 271,
+     SUB = 272,
+     MULT = 273,
+     DIV = 274,
+     STRING = 275,
+     QSTRING = 276
+   };
 #endif
+/* Tokens.  */
+#define SEP 258
+#define PENUP 259
+#define PENDOWN 260
+#define PRINT 261
+#define CHANGE_COLOR 262
+#define COLOR 263
+#define CLEAR 264
+#define TURN 265
+#define LOOP 266
+#define MOVE 267
+#define NUMBER 268
+#define END 269
+#define SAVE 270
+#define PLUS 271
+#define SUB 272
+#define MULT 273
+#define DIV 274
+#define STRING 275
+#define QSTRING 276
 
-/* Value type.  */
+
+
+
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-union YYSTYPE
-{
+typedef union YYSTYPE
 #line 50 "gvlogo.y"
-
+{
 	float f;
 	char* s;
-
-#line 90 "gvlogo.tab.h"
-
-};
-typedef union YYSTYPE YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
+}
+/* Line 1529 of yacc.c.  */
+#line 96 "gvlogo.tab.h"
+	YYSTYPE;
+# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
+# define YYSTYPE_IS_TRIVIAL 1
 #endif
 
-/* Location type.  */
+extern YYSTYPE yylval;
+
 #if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE YYLTYPE;
-struct YYLTYPE
+typedef struct YYLTYPE
 {
   int first_line;
   int first_column;
   int last_line;
   int last_column;
-};
+} YYLTYPE;
+# define yyltype YYLTYPE /* obsolescent; will be withdrawn */
 # define YYLTYPE_IS_DECLARED 1
 # define YYLTYPE_IS_TRIVIAL 1
 #endif
 
-
-extern YYSTYPE yylval;
 extern YYLTYPE yylloc;
-
-int yyparse (void);
-
-
-#endif /* !YY_YY_GVLOGO_TAB_H_INCLUDED  */
