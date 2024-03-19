@@ -82,8 +82,13 @@ statement:			command SEP						{ prompt(); }
 		|			error '\n' 						{ yyerrok; prompt(); }
 		;
 command:			PENUP							{ penup(); }
+		|			PENDOWN							{ pendown(); }
+		|			MOVE NUMBER						{ move($2); }
+		|			COLOR NUMBER NUMBER NUMBER		{ change_color($2, $3, $4); }
+		|			CLEAR							{ clear(); }
+		|			TURN NUMBER						{ turn($2); }
 		;
-expression_list:
+expression_list:	expression
 		|			expression expression_list		
 		;
 expression:			NUMBER PLUS expression			{ $$ = $1 + $3; }
@@ -241,3 +246,23 @@ void save(const char* path){
 	SDL_SaveBMP(surface, path);
 	SDL_FreeSurface(surface);
 }
+
+void goto(x, y){
+    float x_val, y_val;
+    where(&x_val, &y_val);
+    x = x_val;
+    y = y_val;
+
+    float x2 = x;
+    float y2 = y;
+
+    float angle = atan2(y2 - y, x2 - x) * 180 / M_PI;
+    turn(angle);
+    float distance = sqrt(pow(x2 - x, 2) + pow(y2 - y, 2));
+    move(distance);
+}
+
+void where(){
+    printf("Current coordinates: (%f, %f)\n", x, y);
+}
+

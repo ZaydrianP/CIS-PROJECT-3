@@ -8,7 +8,7 @@ void yyerror(const char* s);
 
 %%
 
-(sep|SEP)                    { printf("GOT SEP"); return SEP; }
+;                            { printf("GOT SEP"); return SEP; }
 (penup|PENUP)                { printf("GOT PENUP"); return PENUP; }
 (pendown|PENDOWN)            { printf("GOT PENDOWN"); return PENDOWN; }
 (print|PRINT)                { printf("GOT PRINT"); return PRINT; }
@@ -22,7 +22,7 @@ void yyerror(const char* s);
 (end|END)                    { printf("GOT END"); return END; }
 (save|SAVE)                  { printf("GOT SAVE"); return SAVE; }
 +\                           { printf("GOT PLUS"); return PLUS; }
--\                           { printf("GOT SUB"); return SUB; }
+-                            { printf("GOT SUB"); return SUB; }
 *\                           { printf("GOT MULT"); return MULT; }
 /\                           { printf("GOT DIV"); return DIV; }
 (goto|GOTO)                  { printf("GOT GOTO"); return GOTO; }
