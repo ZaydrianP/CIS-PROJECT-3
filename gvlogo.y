@@ -84,7 +84,7 @@ statement:			command SEP						{ prompt(); }
 command:			PENUP							{ penup(); }
 		|			PENDOWN							{ pendown(); }
 		|			MOVE NUMBER						{ move($2); }
-		|			COLOR NUMBER NUMBER NUMBER		{ change_color($2, $3, $4); }
+		|		   CHANGE_COLOR NUMBER NUMBER NUMBER{ change_color($2, $3, $4); }
 		|			CLEAR							{ clear(); }
 		|			TURN NUMBER						{ turn($2); }
 		;
