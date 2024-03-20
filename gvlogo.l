@@ -17,7 +17,8 @@
 (turn|TURN)                  { printf("TURN"); return TURN; }
 (loop|LOOP)                  { printf("LOOP"); return LOOP; }
 (move|MOVE)                  { printf("MOVE"); return MOVE; }
-[0-9]+\.[0-9]+               { printf("NUMBERS"); return NUMBER; }
+[0-9]+\.[0-9]+               { printf("NUMBER"); return NUMBER; }
+[0-9]+                       { printf("NUMBER"); return NUMBER; }
 (end|END)                    { printf("END"); return END; }
 (save|SAVE)                  { printf("SAVE"); return SAVE; }
 \+                           { printf("PLUS"); return PLUS; }
@@ -27,6 +28,9 @@
 (goto|GOTO)                  { printf("GOTO"); return GOTO; }
 (where|WHERE)                { printf("WHERE"); return WHERE; }
 \$[a-z]                      { printf("VARIABLES"); return VARIABLE; }
+\"[^\"\n]*\"                 { printf("QSTRING"); return QSTRING; }
+[a-zA-Z]+                    { printf("STRING"); return STRING; }
+\=                           { printf("EQUALS"); return EQUALS; }
 
 
 [ \t\r\n]			;

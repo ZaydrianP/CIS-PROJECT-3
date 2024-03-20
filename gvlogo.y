@@ -75,6 +75,7 @@ void where();
 %token PLUS SUB MULT DIV
 %token<s> STRING QSTRING
 %type<f> expression expression_list NUMBER
+%token EQUALS
 
 %%
 
@@ -95,6 +96,11 @@ command:			PENUP							{ penup(); }
 		|			END								{ shutdown(); }
 		|			GOTO NUMBER NUMBER				{ go_to($2, $3); }
 		|			WHERE 							{ where(); }
+		|			SAVE QSTRING					{ save($2); }
+		|			PRINT QSTRING					{ output($2); }
+		|			VARIABLE EQUALS expression		{ set_variable($1, $3); }
+		|			VARIABLE						{ $$ = get_variable($1); }
+		|			
 		;
 expression_list:	expression
 		|			expression expression_list		
