@@ -1,9 +1,8 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-//#include "gvlogo.tab.h"
+#include "gvlogo.tab.h"
 
-void yyerror(const char* s);
 %}
 
 %%
@@ -21,10 +20,10 @@ void yyerror(const char* s);
 [0-9]+\.[0-9]+               { printf("GOT NUMBERS"); return NUMBER; }
 (end|END)                    { printf("GOT END"); return END; }
 (save|SAVE)                  { printf("GOT SAVE"); return SAVE; }
-+\                           { printf("GOT PLUS"); return PLUS; }
+\+                           { printf("GOT PLUS"); return PLUS; }
 -                            { printf("GOT SUB"); return SUB; }
-*\                           { printf("GOT MULT"); return MULT; }
-/\                           { printf("GOT DIV"); return DIV; }
+\*                           { printf("GOT MULT"); return MULT; }
+\/                           { printf("GOT DIV"); return DIV; }
 (goto|GOTO)                  { printf("GOT GOTO"); return GOTO; }
 (where|WHERE)                { printf("GOT WHERE"); return WHERE; }
 \$[a-z]                      { printf("GOT VARIABLES"); return VARIABLE; }
@@ -34,12 +33,3 @@ void yyerror(const char* s);
 .			{ yyerror("Lexing Syntax error.\n"); } 
 
 %%
-
-int main(int argc, char** argv){
-    yylex();
-    return 0;
-}
-
-void yyerror(const char* s){
-    printf("%s\n", s);
-}

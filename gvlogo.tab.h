@@ -55,24 +55,27 @@ extern int yydebug;
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
     SEP = 258,                     /* SEP  */
-    PENUP = 259,                   /* PENUP  */
-    PENDOWN = 260,                 /* PENDOWN  */
-    PRINT = 261,                   /* PRINT  */
-    CHANGE_COLOR = 262,            /* CHANGE_COLOR  */
-    COLOR = 263,                   /* COLOR  */
-    CLEAR = 264,                   /* CLEAR  */
-    TURN = 265,                    /* TURN  */
-    LOOP = 266,                    /* LOOP  */
-    MOVE = 267,                    /* MOVE  */
-    NUMBER = 268,                  /* NUMBER  */
-    END = 269,                     /* END  */
-    SAVE = 270,                    /* SAVE  */
-    PLUS = 271,                    /* PLUS  */
-    SUB = 272,                     /* SUB  */
-    MULT = 273,                    /* MULT  */
-    DIV = 274,                     /* DIV  */
-    STRING = 275,                  /* STRING  */
-    QSTRING = 276                  /* QSTRING  */
+    GOTO = 259,                    /* GOTO  */
+    WHERE = 260,                   /* WHERE  */
+    VARIABLE = 261,                /* VARIABLE  */
+    PENUP = 262,                   /* PENUP  */
+    PENDOWN = 263,                 /* PENDOWN  */
+    PRINT = 264,                   /* PRINT  */
+    CHANGE_COLOR = 265,            /* CHANGE_COLOR  */
+    COLOR = 266,                   /* COLOR  */
+    CLEAR = 267,                   /* CLEAR  */
+    TURN = 268,                    /* TURN  */
+    LOOP = 269,                    /* LOOP  */
+    MOVE = 270,                    /* MOVE  */
+    NUMBER = 271,                  /* NUMBER  */
+    END = 272,                     /* END  */
+    SAVE = 273,                    /* SAVE  */
+    PLUS = 274,                    /* PLUS  */
+    SUB = 275,                     /* SUB  */
+    MULT = 276,                    /* MULT  */
+    DIV = 277,                     /* DIV  */
+    STRING = 278,                  /* STRING  */
+    QSTRING = 279                  /* QSTRING  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -86,7 +89,7 @@ union YYSTYPE
 	float f;
 	char* s;
 
-#line 90 "gvlogo.tab.h"
+#line 93 "gvlogo.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

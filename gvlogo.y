@@ -57,6 +57,9 @@ void where();
 %locations
 
 %token SEP
+%token GOTO
+%token WHERE
+%token VARIABLE
 %token PENUP
 %token PENDOWN
 %token PRINT
