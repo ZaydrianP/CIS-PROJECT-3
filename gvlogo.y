@@ -92,6 +92,9 @@ command:			PENUP							{ penup(); }
 		|		   CHANGE_COLOR NUMBER NUMBER NUMBER{ change_color($2, $3, $4); }
 		|			CLEAR							{ clear(); }
 		|			TURN NUMBER						{ turn($2); }
+		|			END								{ shutdown(); }
+		|			GOTO NUMBER NUMBER				{ go_to($2, $3); }
+		|			WHERE 							{ where(); }
 		;
 expression_list:	expression
 		|			expression expression_list		

@@ -7,26 +7,26 @@
 
 %%
 
-;                            { printf("GOT SEP"); return SEP; }
-(penup|PENUP)                { printf("GOT PENUP"); return PENUP; }
-(pendown|PENDOWN)            { printf("GOT PENDOWN"); return PENDOWN; }
-(print|PRINT)                { printf("GOT PRINT"); return PRINT; }
-(change_color|CHANGE_COLOR)  { printf("GOT CHANGE_COLOR"); return CHANGE_COLOR; }
-(color|COLOR)                { printf("GOT COLOR"); return COLOR; }
-(clear|CLEAR)                { printf("GOT CLEAR"); return CLEAR; }
-(turn|TURN)                  { printf("GOT TURN"); return TURN; }
-(loop|LOOP)                  { printf("GOT LOOP"); return LOOP; }
-(move|MOVE)                  { printf("GOT MOVE"); return MOVE; }
-[0-9]+\.[0-9]+               { printf("GOT NUMBERS"); return NUMBER; }
-(end|END)                    { printf("GOT END"); return END; }
-(save|SAVE)                  { printf("GOT SAVE"); return SAVE; }
-\+                           { printf("GOT PLUS"); return PLUS; }
--                            { printf("GOT SUB"); return SUB; }
-\*                           { printf("GOT MULT"); return MULT; }
-\/                           { printf("GOT DIV"); return DIV; }
-(goto|GOTO)                  { printf("GOT GOTO"); return GOTO; }
-(where|WHERE)                { printf("GOT WHERE"); return WHERE; }
-\$[a-z]                      { printf("GOT VARIABLES"); return VARIABLE; }
+;                            { printf("SEP"); return SEP; }
+(penup|PENUP)                { printf("PENUP"); return PENUP; }
+(pendown|PENDOWN)            { printf("PENDOWN"); return PENDOWN; }
+(print|PRINT)                { printf("PRINT"); return PRINT; }
+(change_color|CHANGE_COLOR)  { printf("CHANGE_COLOR"); return CHANGE_COLOR; }
+(color|COLOR)                { printf("COLOR"); return COLOR; }
+(clear|CLEAR)                { printf("CLEAR"); return CLEAR; }
+(turn|TURN)                  { printf("TURN"); return TURN; }
+(loop|LOOP)                  { printf("LOOP"); return LOOP; }
+(move|MOVE)                  { printf("MOVE"); return MOVE; }
+[0-9]+\.[0-9]+               { printf("NUMBERS"); return NUMBER; }
+(end|END)                    { printf("END"); return END; }
+(save|SAVE)                  { printf("SAVE"); return SAVE; }
+\+                           { printf("PLUS"); return PLUS; }
+-                            { printf("SUB"); return SUB; }
+\*                           { printf("MULT"); return MULT; }
+\/                           { printf("DIV"); return DIV; }
+(goto|GOTO)                  { printf("GOTO"); return GOTO; }
+(where|WHERE)                { printf("WHERE"); return WHERE; }
+\$[a-z]                      { printf("VARIABLES"); return VARIABLE; }
 
 
 [ \t\r\n]			;

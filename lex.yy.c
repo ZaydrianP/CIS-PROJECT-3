@@ -812,102 +812,102 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 10 "gvlogo.l"
-{ printf("GOT SEP"); return SEP; }
+{ printf("SEP"); return SEP; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 11 "gvlogo.l"
-{ printf("GOT PENUP"); return PENUP; }
+{ printf("PENUP"); return PENUP; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 12 "gvlogo.l"
-{ printf("GOT PENDOWN"); return PENDOWN; }
+{ printf("PENDOWN"); return PENDOWN; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 13 "gvlogo.l"
-{ printf("GOT PRINT"); return PRINT; }
+{ printf("PRINT"); return PRINT; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 14 "gvlogo.l"
-{ printf("GOT CHANGE_COLOR"); return CHANGE_COLOR; }
+{ printf("CHANGE_COLOR"); return CHANGE_COLOR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 15 "gvlogo.l"
-{ printf("GOT COLOR"); return COLOR; }
+{ printf("COLOR"); return COLOR; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 16 "gvlogo.l"
-{ printf("GOT CLEAR"); return CLEAR; }
+{ printf("CLEAR"); return CLEAR; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 17 "gvlogo.l"
-{ printf("GOT TURN"); return TURN; }
+{ printf("TURN"); return TURN; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 18 "gvlogo.l"
-{ printf("GOT LOOP"); return LOOP; }
+{ printf("LOOP"); return LOOP; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 19 "gvlogo.l"
-{ printf("GOT MOVE"); return MOVE; }
+{ printf("MOVE"); return MOVE; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 20 "gvlogo.l"
-{ printf("GOT NUMBERS"); return NUMBER; }
+{ printf("NUMBERS"); return NUMBER; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 21 "gvlogo.l"
-{ printf("GOT END"); return END; }
+{ printf("END"); return END; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 22 "gvlogo.l"
-{ printf("GOT SAVE"); return SAVE; }
+{ printf("SAVE"); return SAVE; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 23 "gvlogo.l"
-{ printf("GOT PLUS"); return PLUS; }
+{ printf("PLUS"); return PLUS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 24 "gvlogo.l"
-{ printf("GOT SUB"); return SUB; }
+{ printf("SUB"); return SUB; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 25 "gvlogo.l"
-{ printf("GOT MULT"); return MULT; }
+{ printf("MULT"); return MULT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 26 "gvlogo.l"
-{ printf("GOT DIV"); return DIV; }
+{ printf("DIV"); return DIV; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 27 "gvlogo.l"
-{ printf("GOT GOTO"); return GOTO; }
+{ printf("GOTO"); return GOTO; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 28 "gvlogo.l"
-{ printf("GOT WHERE"); return WHERE; }
+{ printf("WHERE"); return WHERE; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 29 "gvlogo.l"
-{ printf("GOT VARIABLES"); return VARIABLE; }
+{ printf("VARIABLES"); return VARIABLE; }
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
