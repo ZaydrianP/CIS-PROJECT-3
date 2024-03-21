@@ -44,7 +44,7 @@ void change_color(int r, int g, int b);
 void clear();
 void save(const char* path);
 void shutdown();
-void go_to(float x, float y);
+void go_to(int x, int y);
 void where();
 
 %}
@@ -98,8 +98,6 @@ command:			PENUP							{ penup(); }
 		|			WHERE 							{ where(); }
 		|			SAVE QSTRING					{ save($2); }
 		|			PRINT QSTRING					{ output($2); }
-		|			VARIABLE EQUALS expression		{ set_variable($1, $3); }
-		|			VARIABLE						{ $$ = get_variable($1); }
 		|			
 		;
 expression_list:	expression
@@ -261,7 +259,7 @@ void save(const char* path){
 	SDL_FreeSurface(surface);
 }
 
-void go_to(float x, float y){
+void go_to(int x, int y){
     float x_val, y_val;
     where(&x_val, &y_val);
     x = x_val;
