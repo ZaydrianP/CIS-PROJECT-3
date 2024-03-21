@@ -75,7 +75,8 @@ extern int yydebug;
     MULT = 276,                    /* MULT  */
     DIV = 277,                     /* DIV  */
     STRING = 278,                  /* STRING  */
-    QSTRING = 279                  /* QSTRING  */
+    QSTRING = 279,                 /* QSTRING  */
+    EQUALS = 280                   /* EQUALS  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -89,7 +90,7 @@ union YYSTYPE
 	float f;
 	char* s;
 
-#line 93 "gvlogo.tab.h"
+#line 94 "gvlogo.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

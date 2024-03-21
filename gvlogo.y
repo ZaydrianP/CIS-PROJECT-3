@@ -31,6 +31,7 @@ static int pen_state = 1;
 static double direction = 0.0;
 
 int yylex(void);
+float symbol_table [26];
 int yyerror(const char* s);
 void startup();
 int run(void* data);
@@ -78,6 +79,8 @@ void where();
 %token EQUALS
 
 %%
+//index = int($2[1]) - 65
+//symbol_table[index] = $3
 
 program:			statement_list END				{ printf("Program complete."); shutdown(); exit(0); }
 		;
