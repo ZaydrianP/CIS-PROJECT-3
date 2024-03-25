@@ -92,8 +92,8 @@ statement:			command SEP						{ prompt(); }
 		;
 command:			PENUP							{ penup(); }
 		|			PENDOWN							{ pendown(); }
-		|			MOVE NUMBER						{ move($2); }
-		|		   CHANGE_COLOR NUMBER NUMBER NUMBER{ change_color($2, $3, $4); }
+		|			MOVE expression_list						{ move($2); }
+		|		    CHANGE_COLOR expression_list expression_list expression_list { change_color($2, $3, $4); }
 		|			CLEAR							{ clear(); }
 		|			TURN NUMBER						{ turn($2); }
 		|			END								{ shutdown(); }

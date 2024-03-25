@@ -868,12 +868,12 @@ YY_RULE_SETUP
 case 11:
 YY_RULE_SETUP
 #line 20 "gvlogo.l"
-{ printf("NUMBER"); return NUMBER; }
+{ yylval.f = atof(yytext); printf("NUMBER"); return NUMBER; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 21 "gvlogo.l"
-{ printf("NUMBER"); return NUMBER; }
+{ yylval.f = atof(yytext); printf("NUMBER"); return NUMBER; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
