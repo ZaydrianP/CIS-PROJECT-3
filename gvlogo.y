@@ -82,34 +82,34 @@ void where();
 //index = int($2[1]) - 65
 //symbol_table[index] = $3
 
-program:			statement_list END				{ printf("Program complete."); shutdown(); exit(0); }
+program:			statement_list END											 { printf("Program complete."); shutdown(); exit(0); }
 		;
 statement_list:		statement					
 		|			statement statement_list
 		;
-statement:			command SEP						{ prompt(); }
-		|			error '\n' 						{ yyerrok; prompt(); }
+statement:			command SEP													 { prompt(); }
+		|			error '\n' 													 { yyerrok; prompt(); }
 		;
-command:			PENUP							{ penup(); }
-		|			PENDOWN							{ pendown(); }
-		|			MOVE expression_list						{ move($2); }
+command:			PENUP														 { penup(); }
+		|			PENDOWN														 { pendown(); }
+		|			MOVE expression_list										 { move($2); }
 		|		    CHANGE_COLOR expression_list expression_list expression_list { change_color($2, $3, $4); }
-		|			CLEAR							{ clear(); }
-		|			TURN NUMBER						{ turn($2); }
-		|			END								{ shutdown(); }
-		|			GOTO NUMBER NUMBER				{ go_to($2, $3); }
-		|			WHERE 							{ where(); }
-		|			SAVE QSTRING					{ save($2); }
-		|			PRINT QSTRING					{ output($2); }
+		|			CLEAR														 { clear(); }
+		|			TURN expression_list										 { turn($2); }
+		|			END															 { shutdown(); }
+		|			GOTO expression_list expression_list						 { go_to($2, $3); }
+		|			WHERE 														 { where(); }
+		|			SAVE QSTRING												 { save($2); }
+		|			PRINT QSTRING												 { output($2); }
 		|			
 		;
 expression_list:	expression
 		|			expression expression_list		
 		;
-expression:			NUMBER PLUS expression			{ $$ = $1 + $3; }
-		|			NUMBER MULT expression			{ $$ = $1 * $3; }
-		|			NUMBER SUB expression			{ $$ = $1 - $3; }
-		|			NUMBER DIV expression			{ $$ = $1 / $3; }
+expression:			NUMBER PLUS expression										 { $$ = $1 + $3; }
+		|			NUMBER MULT expression										 { $$ = $1 * $3; }
+		|			NUMBER SUB expression										 { $$ = $1 - $3; }
+		|			NUMBER DIV expression										 { $$ = $1 / $3; }
 		|			NUMBER
 		;
 
