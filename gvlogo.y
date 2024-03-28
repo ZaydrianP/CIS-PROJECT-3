@@ -29,6 +29,7 @@ static double x = WIDTH / 2;
 static double y = HEIGHT / 2;
 static int pen_state = 1;
 static double direction = 0.0;
+float symbol_table[26];
 
 int yylex(void);
 float symbol_table [26];
@@ -79,8 +80,7 @@ void where();
 %token EQUALS
 
 %%
-//index = int($2[1]) - 65
-//symbol_table[index] = $3
+
 
 program:			statement_list END											 { printf("Program complete."); shutdown(); exit(0); }
 		;
@@ -101,7 +101,7 @@ command:			PENUP														 { penup(); }
 		|			WHERE 														 { where(); }
 		|			SAVE QSTRING												 { save($2); }
 		|			PRINT QSTRING												 { output($2); }
-		|			
+		|			VARIABLE EQUALS expression 									 { symbol_table[$1 - 97] = $3; }		
 		;
 expression_list:	expression
 		|			expression expression_list		
@@ -111,6 +111,7 @@ expression:			NUMBER PLUS expression										 { $$ = $1 + $3; }
 		|			NUMBER SUB expression										 { $$ = $1 - $3; }
 		|			NUMBER DIV expression										 { $$ = $1 / $3; }
 		|			NUMBER
+		|			VARIABLE													 { $$ = symbol_table[$1 - 97]; }
 		;
 
 %%
